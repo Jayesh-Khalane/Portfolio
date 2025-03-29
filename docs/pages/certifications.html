@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay's Certifications</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        .certs-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 2rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .cert-card {
+            background: var(--beige-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover .cert-image img {
+            transform: scale(1.1);
+        }
+
+        .cert-content {
+            padding: 1.5rem;
+        }
+
+        .cert-date {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            font-size: 1rem;
+            color: var(--beige-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .cert-description {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .view-cert {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--beige-dark);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .view-cert:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .cert-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cert-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--beige-light);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html">Home</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certificates</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="certs-container">
+        <h2 data-aos="fade-down" style="text-align: center; margin-bottom: 3rem;">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="../../assets/certificate/cert1.jpg" alt="Machine Learning Certificate">
+                </div>
+                <div class="cert-content">
+                    <div class="cert-date">March 2024</div>
+                    <h3 class="cert-title">Advanced Machine Learning Specialization</h3>
+                    <div class="cert-issuer">Stanford University</div>
+                    <p class="cert-description">Deep learning and neural networks specialization with hands-on projects and real-world applications.</p>
+                    <a href="#" class="view-cert" onclick="openModal('cert1.jpg')">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cert-image">
+                    <img src="../../assets/certificate/cert2.jpg" alt="Cloud Architecture Certificate">
+                </div>
+                <div class="cert-content">
+                    <div class="cert-date">January 2024</div>
+                    <h3 class="cert-title">Cloud Architecture Professional</h3>
+                    <div class="cert-issuer">Google Cloud</div>
+                    <p class="cert-description">Enterprise cloud architecture and solutions design with focus on scalability and security.</p>
+                    <a href="#" class="view-cert" onclick="openModal('cert2.jpg')">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="cert-image">
+                    <img src="../../assets/certificate/cert3.jpg" alt="Full Stack Development Certificate">
+                </div>
+                <div class="cert-content">
+                    <div class="cert-date">December 2023</div>
+                    <h3 class="cert-title">Full Stack Development</h3>
+                    <div class="cert-issuer">MIT xPRO</div>
+                    <p class="cert-description">Comprehensive full stack development program covering modern web technologies and best practices.</p>
+                    <a href="#" class="view-cert" onclick="openModal('cert3.jpg')">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cert-modal" id="certModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <img src="" alt="Certificate" id="modalImage" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = `../../assets/certificate/${imageSrc}`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('certModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html> 
