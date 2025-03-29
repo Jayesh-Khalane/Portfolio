@@ -8,7 +8,7 @@
 /* Color Variables */
 :root {
     --beige-light: #F5F5DC;
-    --beige-medium: #E8DCC4;
+    --beige-medium: #e0cda9;
     --beige-dark: #D4C5A9;
     --accent-blue: #34495e;
     --text-dark: #2c3e50;
@@ -33,40 +33,13 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.30;
+    opacity: 0.35;
     pointer-events: none;
-    background-image: url('../../assets/backgrounds/engineering_bg.png');
+    background-image: url('../assets/backgrounds/engineering_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-/* Engineer Meme Animation */
-.engineer-meme {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: auto;
-    z-index: 1000;
-    opacity: 0;
-    animation: simpleFade 3s ease-in-out forwards;
-}
-
-.engineer-meme img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-@keyframes simpleFade {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
 }
 
 /* Navigation */
@@ -184,9 +157,9 @@ body {
 .hero-image {
     width: 100%;
     margin-bottom: 2rem;
-    border-radius: 15px;
+    border-radius: 35px;
     overflow: hidden;
-    border: 2px solid var(--text-dark);
+    border: 3px solid var(--text-dark);
     box-shadow: var(--shadow-light);
     transition: var(--transition-standard);
 }
@@ -225,9 +198,40 @@ body {
 
 .social-link:hover {
     background: var(--accent-blue);
-    color: var(--beige-light);
+    color: white;
     transform: translateY(-3px);
-    box-shadow: var(--shadow-light);
+}
+
+.icon-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.icon-link:hover {
+    color: var(--accent-blue);
+    transform: translateY(-3px) scale(1.2);
+    border-color: var(--accent-blue);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.icon-link i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.icon-link:hover i {
+    transform: scale(1.2);
 }
 
 .social-link i {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay's Projects</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -58,7 +58,8 @@
 
         .timeline-item:hover::before {
             background: var(--accent-blue);
-            transform: translateY(-50%);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
         }
 
         .left {
@@ -89,7 +90,6 @@
         .timeline-content:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            background: var(--beige-medium);
         }
 
         .timeline-date {
@@ -133,12 +133,19 @@
             transform: translateY(-2px);
         }
 
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--beige-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
         .project-link {
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
             background: var(--beige-dark);
-            color: var(--text-dark);
+            color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
@@ -219,15 +226,13 @@
         <div class="timeline">
             <div class="timeline-item left" data-aos="fade-right">
                 <div class="timeline-content">
-                    <div class="timeline-date">March 2024</div>
-                    <h3 class="timeline-title">Neural Style Transfer App</h3>
-                    <p class="timeline-description">Developed a web application that applies artistic styles to images using PyTorch's neural style transfer. Implemented custom loss functions and optimization techniques to achieve high-quality results with faster processing times.</p>
+                    <div class="timeline-date">April 2024-Ongoing</div>
+                    <h3 class="timeline-title">3D reconstruction</h3>
+                    <div class="timeline-company">Academic Project</div>
+                    <p class="timeline-description">under development</p>
                     <div class="skills-container">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">CNN</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">under development</span>
+
                     </div>
                     <a href="#" class="project-link" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -235,35 +240,44 @@
 
             <div class="timeline-item right" data-aos="fade-left">
                 <div class="timeline-content">
-                    <div class="timeline-date">February 2024</div>
-                    <h3 class="timeline-title">Transformer-based Text Summarizer</h3>
-                    <p class="timeline-description">Built a text summarization model using PyTorch's transformer architecture. Implemented attention mechanisms and achieved SOTA results on benchmark datasets. Deployed as a REST API service.</p>
+                    <div class="timeline-date">Aug 2023 - Feb 2024</div>
+                    <h3 class="timeline-title">Astro-Tinker Bot |  Team Lead</h3>
+                    <div class="timeline-company">eYRC 2023-24 IIT-Bombay</div>
+                    <p class="timeline-description"> Designed a custom RISC-V-32I CPU architecture in Verilog with utilizing parallel processing.Integrated FPGA-based robotic control with ultrasonic sensors, electromagnets, PWM motor control, and UART wireless communication. Developed and simulated the system using Intel Quartus Prime, ModelSim, and RISC-V GNU Compiler. The bot autonomously navigated a space-station-themed arena, identifying and fixing issues using real-time processing.</p>
                     <div class="skills-container">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Transformers</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">RISC-V</span>
+                        <span class="skill-tag">Verilog</span>
+                        <span class="skill-tag">State machines</span>
+                        <span class="skill-tag">UART</span>
                     </div>
-                    <a href="#" class="project-link" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="project-link" target="_blank">More details <i class="fas fa-external-link-alt"></i></a>
+
                 </div>
             </div>
 
             <div class="timeline-item left" data-aos="fade-right">
                 <div class="timeline-content">
-                    <div class="timeline-date">January 2024</div>
-                    <h3 class="timeline-title">GAN-based Image Enhancement</h3>
-                    <p class="timeline-description">Created a Generative Adversarial Network using PyTorch to enhance low-resolution images. Implemented custom loss functions and training strategies to achieve 4x upscaling with minimal artifacts.</p>
+                    <div class="timeline-date"></div>
+                    <h3 class="timeline-title">Raspberry Pi Projects </h3>
+                    <div class="timeline-company">Personal & Academic Projects</div>
+                    <p class="timeline-description">
+                        Worked on multiple Raspberry Pi projects throughout my engineering studies,some of them are:
+                        <ul>
+                            <li><strong>Raspberry Pi Cluster:</strong> Set up a multi-node Raspberry Pi cluster for parallel computing and distributed processing experiments.</li>
+                            <li><strong>Robot Operating System (ROS) Development:</strong> Configured a Raspberry Pi for ROS-based robotic applications, integrating sensors,communication and motion control.</li>
+                            <li><strong>Network Attached Storage (NAS):</strong>NAS for remote file storage and media streaming.</li>
+                            <li><strong>Frequency Modulation Broadcasting:</strong> Created an FM transmitter for broadcasting audio signals.</li>
+                            <li><strong>Personal Voice Assistant:</strong> Home automation </li>
+                        </ul>
+                    </p>
                     <div class="skills-container">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">GANs</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">CUDA</span>
-                        <span class="skill-tag">MLOps</span>
+                        <span class="skill-tag">Networking</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Debugging</span>
                     </div>
-                    <a href="#" class="project-link" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+            
         </div>
     </div>
 
