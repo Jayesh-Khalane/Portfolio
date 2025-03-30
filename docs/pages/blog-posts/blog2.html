@@ -104,6 +104,12 @@
         .next-blog-link i {
             margin-left: 0.5rem;
         }
+        
+        .interaction-btn.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: var(--beige-medium);
+        }
     </style>
 </head>
 <body>
@@ -124,7 +130,7 @@
                 <li><a href="../experience.html">Experience</a></li>
                 <li><a href="../projects.html">Projects</a></li>
                 <li><a href="../certifications.html">Certificates</a></li>
-                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../main_blog_page.html">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -150,25 +156,25 @@
         <div class="blog-interactions">
             <button id="likeButton" onclick="handleLike('blog2')" class="interaction-btn">
                 <i class="fas fa-heart"></i>
-                <span id="likesCount">0</span>
+                <span id="likeCount">0</span>
             </button>
             
             <button id="shareButton" onclick="handleShare('blog2')" class="interaction-btn">
                 <i class="fas fa-share"></i>
-                <span id="sharesCount">0</span>
+                <span id="shareCount">0</span>
             </button>
         </div>
         
         <!-- Next Blog Navigation -->
         <div class="blog-navigation">
-            <a href="../blog.html" class="next-blog-link">
+            <a href="../main_blog_page.html" class="next-blog-link">
                 <span>Back to All Blogs</span>
                 <i class="fas fa-arrow-left"></i>
             </a>
         </div>
     </div>
 
-    <a href="../blog.html" class="back-btn" data-aos="fade-up">
+    <a href="../main_blog_page.html" class="back-btn" data-aos="fade-up">
         <i class="fas fa-home"></i>
     </a>
 
@@ -179,6 +185,12 @@
             duration: 1000,
             once: true,
             offset: 100
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogId = 'blog2'; // Change this for each blog post
+            initializeCounters(blogId);
+            updateDisplay(blogId);
         });
     </script>
 </body>

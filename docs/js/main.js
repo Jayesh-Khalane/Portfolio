@@ -75,16 +75,6 @@ if (typewriterText) {
     window.onload = function() {
         typewriterText.textContent = '';
         typeWriter();
-        
-        // Set last updated date
-        const lastUpdated = document.getElementById('lastUpdated');
-        if (lastUpdated) {
-            lastUpdated.textContent = new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-        }
     };
 }
 

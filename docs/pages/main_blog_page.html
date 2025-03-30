@@ -108,7 +108,7 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="certifications.html">Certificates</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="main_blog_page.html">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -150,6 +150,14 @@
             once: true,
             offset: 100
         });
+
+        function resetCounts(blogId, type, count) {
+            localStorage.setItem(`${blogId}_${type}`, count);
+        }
+
+        resetCounts('blog1', 'likes', 0);  // Reset blog1 likes to 0
+        resetCounts('blog2', 'shares', 0);  // Reset blog2 shares to 0
+        resetCounts('blog1', 'all', 0);    // Reset both likes and shares for blog1
     </script>
 </body>
 </html> 

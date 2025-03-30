@@ -1,69 +1,84 @@
-class BlogInteractions {
-    constructor() {
-        this.countsCache = {};
-        this.initializeCounters();
-    }
+// Initialize an array for counting from 1 to 100
+const countsArray = Array.from({ length: 100 }, (_, i) => i + 1);
 
-    async initializeCounters() {
-        try {
-            // Fix the path to be relative to the blog post location
-            const response = await fetch('../../data/blog-interactions.json');
-            this.countsCache = await response.json();
-            this.updateAllDisplays();
-        } catch (error) {
-            console.error('Failed to initialize counters:', error);
-            this.countsCache = {};
-        }
+// Initialize localStorage if not exists
+function initializeCounters(blogId) {
+    if (!localStorage.getItem(`${blogId}_likeIndex`)) {
+        localStorage.setItem(`${blogId}_likeIndex`, '0');
     }
-
-    updateAllDisplays() {
-        Object.keys(this.countsCache).forEach(blogId => {
-            this.updateDisplay(blogId, 'likes');
-            this.updateDisplay(blogId, 'shares');
-        });
-    }
-
-    updateDisplay(blogId, type) {
-        // Fix: Use the correct ID format
-        const element = document.getElementById(`${type}Count`);
-        if (element) {
-            const count = this.countsCache[blogId]?.[type] || 0;
-            element.textContent = count >= 100 ? '100+' : count;
-        }
-    }
-
-    handleLike(blogId) {
-        // Add local storage fallback for testing
-        const key = `${blogId}_likes`;
-        const currentCount = parseInt(localStorage.getItem(key) || '0');
-        const newCount = Math.min(currentCount + 1, 100);
-        localStorage.setItem(key, newCount.toString());
-        
-        // Update display
-        const element = document.getElementById('likesCount');
-        if (element) {
-            element.textContent = newCount >= 100 ? '100+' : newCount;
-        }
-    }
-
-    handleShare(blogId) {
-        // Add local storage fallback for testing
-        const key = `${blogId}_shares`;
-        const currentCount = parseInt(localStorage.getItem(key) || '0');
-        const newCount = Math.min(currentCount + 1, 100);
-        localStorage.setItem(key, newCount.toString());
-        
-        // Update display
-        const element = document.getElementById('sharesCount');
-        if (element) {
-            element.textContent = newCount >= 100 ? '100+' : newCount;
-        }
+    if (!localStorage.getItem(`${blogId}_shareIndex`)) {
+        localStorage.setItem(`${blogId}_shareIndex`, '0');
     }
 }
 
-// Initialize the interactions system
-const blogInteractions = new BlogInteractions();
+// Update display with current count
+function updateDisplay(blogId) {
+    const likeIndex = parseInt(localStorage.getItem(`${blogId}_likeIndex`));
+    const shareIndex = parseInt(localStorage.getItem(`${blogId}_shareIndex`));
+    
+    const likeCount = document.getElementById('likeCount');
+    const shareCount = document.getElementById('shareCount');
+    
+    if (likeCount) {
+        likeCount.textContent = likeIndex >= 99 ? '100+' : countsArray[likeIndex];
+    }
+    if (shareCount) {
+        shareCount.textContent = shareIndex >= 99 ? '100+' : countsArray[shareIndex];
+    }
+}
 
-// Export functions for use in HTML
-window.handleLike = (blogId) => blogInteractions.handleLike(blogId);
-window.handleShare = (blogId) => blogInteractions.handleShare(blogId); 
+// Handle like button click
+function handleLike(blogId) {
+    let currentIndex = parseInt(localStorage.getItem(`${blogId}_likeIndex`));
+    if (currentIndex < 99) {
+        currentIndex++;
+        localStorage.setItem(`${blogId}_likeIndex`, currentIndex.toString());
+    }
+    updateDisplay(blogId);
+    
+    // Add animation effect
+    const likeBtn = document.getElementById('likeButton');
+    likeBtn.classList.add('liked');
+    setTimeout(() => likeBtn.classList.remove('liked'), 1000);
+}
+
+// Handle share button click
+function handleShare(blogId) {
+    let currentIndex = parseInt(localStorage.getItem(`${blogId}_shareIndex`));
+    if (currentIndex < 99) {
+        currentIndex++;
+        localStorage.setItem(`${blogId}_shareIndex`, currentIndex.toString());
+    }
+    
+    // Handle share functionality
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            url: window.location.href
+        });
+    } else {
+        navigator.clipboard.writeText(window.location.href)
+            .then(() => alert('Link copied to clipboard!'));
+    }
+    
+    updateDisplay(blogId);
+}
+
+// Reset counts (admin function)
+function resetCounts(blogId, type, value = 0) {
+    if (type === 'likes' || type === 'all') {
+        localStorage.setItem(`${blogId}_likeIndex`, value.toString());
+    }
+    if (type === 'shares' || type === 'all') {
+        localStorage.setItem(`${blogId}_shareIndex`, value.toString());
+    }
+    updateDisplay(blogId);
+    console.log(`Reset ${blogId} ${type} to ${value}`);
+}
+
+// Export for use in global context
+window.initializeCounters = initializeCounters;
+window.updateDisplay = updateDisplay;
+window.handleLike = handleLike;
+window.handleShare = handleShare;
+window.resetCounts = resetCounts; 
