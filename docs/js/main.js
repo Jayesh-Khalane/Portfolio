@@ -24,6 +24,16 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+            hamburger.classList.toggle('active');
+        }
+    });
+});
+
 // Typewriter effect
 const typewriterText = document.getElementById('typewriter-text');
 if (typewriterText) {

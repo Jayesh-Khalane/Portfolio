@@ -88,6 +88,34 @@
             color: white;
             transform: translateX(5px);
         }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+            
+            .blog-grid {
+                gap: 1.5rem;
+            }
+            
+            .blog-content {
+                padding: 1rem;
+            }
+            
+            .read-more {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-image {
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body>
