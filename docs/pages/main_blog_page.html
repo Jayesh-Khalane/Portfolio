@@ -5,118 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        .blog-container {
-            max-width: 1200px;
-            margin: 100px auto;
-            padding: 2rem;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        .blog-card {
-            background: var(--beige-light);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .blog-card:hover .blog-image img {
-            transform: scale(1.1);
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            font-size: 0.9rem;
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-title {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .blog-excerpt {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .read-more {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--beige-dark);
-            color: var(--text-dark);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            background: var(--accent-blue);
-            color: white;
-            transform: translateX(5px);
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            .blog-container {
-                padding: 1rem;
-                margin-top: 80px;
-            }
-            
-            .blog-grid {
-                gap: 1.5rem;
-            }
-            
-            .blog-content {
-                padding: 1rem;
-            }
-            
-            .read-more {
-                display: block;
-                text-align: center;
-                margin-top: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .blog-image {
-                height: 180px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="page-background"></div>
@@ -140,18 +31,24 @@
             </ul>
         </div>
     </nav>
+    
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <div class="blog-container">
+    <div class="blog-container main-blog-container">
         <h2 data-aos="fade-down">Latest Posts</h2>
         <div class="blog-grid">
             <div class="blog-card" data-aos="fade-up">
                 <div class="blog-image">
-                    <img src="../../assets/blog/ai-trends.jpg" alt="AI Trends">
+                    <img src="../assets/Images/cookie.png" alt="AI Trends">
                 </div>
                 <div class="blog-content">
-                    <div class="blog-date">March 15, 2024</div>
-                    <h3 class="blog-title">Future of AI in Healthcare</h3>
-                    <p class="blog-excerpt">Exploring the latest developments in AI-powered medical diagnosis and treatment planning...</p>
+                    <div class="blog-date">30th March 2025</div>
+                    <h3 class="blog-title">Why some cookies taste better ? 🤔</h3>
+                    <p class="blog-excerpt"><p class="blog-excerpt">What if life itself was just a function? From baking cookies to predicting success, let's explore the bizarre yet fascinating world of functions and patterns.🍪🤯</p>
+                </p>
                     <a href="blog-posts/blog1.html" class="read-more">Read More</a>
                 </div>
             </div>
@@ -161,9 +58,9 @@
                     <img src="../../assets/blog/robotics.jpg" alt="Robotics">
                 </div>
                 <div class="blog-content">
-                    <div class="blog-date">March 10, 2024</div>
-                    <h3 class="blog-title">Advances in Robotics</h3>
-                    <p class="blog-excerpt">Recent breakthroughs in autonomous systems and their impact on various industries...</p>
+                    <div class="blog-date">🤔</div>
+                    <h3 class="blog-title">🤔</h3>
+                    <p class="blog-excerpt">🤔</p>
                     <a href="blog-posts/blog2.html" class="read-more">Read More</a>
                 </div>
             </div>
@@ -171,6 +68,7 @@
         </div>
     </div>
 
+    <script src="../js/theme-toggle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
@@ -183,9 +81,9 @@
             localStorage.setItem(`${blogId}_${type}`, count);
         }
 
-        resetCounts('blog1', 'likes', 0);  // Reset blog1 likes to 0
-        resetCounts('blog2', 'shares', 0);  // Reset blog2 shares to 0
-        resetCounts('blog1', 'all', 0);    // Reset both likes and shares for blog1
+        // resetCounts('blog1', 'likes', 0);  // Reset blog1 likes to 0
+        // resetCounts('blog2', 'shares', 0);  // Reset blog2 shares to 0
+        // resetCounts('blog1', 'all', 0);    // Reset both likes and shares for blog1
     </script>
 </body>
 </html> 
