@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Blog Post - Jayesh's Portfolio</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 2rem;
+        }
+        
+        .blog-header {
+            margin-bottom: 2rem;
+        }
+        
+        .blog-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+        }
+        
+        .blog-content {
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .blog-interactions {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .interaction-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            background: var(--beige-light);
+            border: 2px solid var(--beige-dark);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .interaction-btn:hover {
+            background: var(--beige-medium);
+            transform: translateY(-2px);
+        }
+        
+        .interaction-btn.liked {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        .blog-navigation {
+            padding: 2rem 0;
+            border-top: 1px solid var(--beige-medium);
+            margin-top: 3rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .next-blog-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .next-blog-link:hover {
+            background: var(--text-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .next-blog-link i {
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../../index.html">Home</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../certifications.html">Certificates</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1 class="blog-title"> Blog 2</h1>
+            <div class="blog-meta">
+                <span class="blog-date"><i class="far fa-calendar"></i> April 1, 2024</span>
+                <span class="blog-author"><i class="far fa-user"></i> Jayesh Khalane</span>
+            </div>
+        </div>
+        
+        <div class="blog-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo vel metus ultrices tincidunt. Proin fermentum, purus nec eleifend tincidunt, risus justo feugiat quam, vitae placerat sem neque nec ex.</p>
+            
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec euismod magna non eros faucibus, eget vulputate magna rhoncus. Aenean in odio vel est consectetur fermentum vel at tellus.</p>
+            
+            <p>Sed fermentum tellus in nisl consequat, at varius nisi pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec euismod magna non eros faucibus, eget vulputate magna rhoncus.</p>
+        </div>
+        
+        <!-- Like and Share Buttons -->
+        <div class="blog-interactions">
+            <button id="likeButton" onclick="handleLike('blog2')" class="interaction-btn">
+                <i class="fas fa-heart"></i>
+                <span id="likesCount">0</span>
+            </button>
+            
+            <button id="shareButton" onclick="handleShare('blog2')" class="interaction-btn">
+                <i class="fas fa-share"></i>
+                <span id="sharesCount">0</span>
+            </button>
+        </div>
+        
+        <!-- Next Blog Navigation -->
+        <div class="blog-navigation">
+            <a href="../blog.html" class="next-blog-link">
+                <span>Back to All Blogs</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+
+    <a href="../blog.html" class="back-btn" data-aos="fade-up">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script src="../../js/blog-interactions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html> 
