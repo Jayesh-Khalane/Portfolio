@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="../../css/blog-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="page-background"></div>
@@ -54,7 +64,9 @@
         
             <p>In simple terms, a function takes an input and gives an output. It can be as simple as:</p>
             
-            <p><i>f(x) = 2x</i> or <i>f(x) = x²</i> (with just one variable). There are points where the function reaches a minimum value and points where it reaches a maximum value. Functions are also not limited to dimensions. No matter what dimension they exist in, there's always a highest and lowest value.</p>
+            <p>\[f(x) = 2x \text{ or } f(x) = x^2\]</p>
+            
+            <p>with just one variable. There are points where the function reaches a minimum value and points where it reaches a maximum value. Functions are also not limited to dimensions. No matter what dimension they exist in, there's always a highest and lowest value.</p>
         
             <p>Now, without diving deep into the math of finding these values (or even questioning if it's possible to find them), let's ask the real question: <b>why should anyone care about functions?</b></p>
         
@@ -63,13 +75,13 @@
             <h2>The Cookie Analogy</h2>
             <p>Let's try to understand while making a cookie! Specifically, a chocolate chip cookie. 🍪 To bake one, you need ingredients like flour, butter, eggs, chocolate chips, sugar, baking powder, salt, vanilla extract, and maybe some cashew nuts. If you follow a recipe (or if you're a pro), you get a cookie. It may turn out great, terrible, or somewhere in between.😆</p>
         
-            <p>Now, think and ponder 🤔—this is exactly like a function!</p>
+            <p>Now, think and ponder 🤔—this is exactly like a <i>function</i>!</p>
         
-            <p>Making a tasty Choco-chip cookie 🍪 is a function of using the right ingredients, in the right amounts, in the right order.</p>
+            <p>Making a tasty Choco-chip cookie 🍪 is a <i>function</i> of using the right ingredients, in the right amounts, in the right order.</p>
         
             <p>So, <b>is it even possible to guarantee that the cookie turns out to be perfect every time?</b> That's the same as asking: <b>is it possible to find the right variables, in the right magnitude, in the right order to get the function output we desire?</b></p>
             
-            <p>Mathematically speaking, we can find the Everest's peak or the Mariana Trench of a function or any optimal value you desire, even though it gets complicated in higher dimensions. Theoretically, it's possible.</p>
+            <p>Mathematically speaking, we can find the Everest's peak or the Mariana Trench of a <i>function</i> or any optimal value you desire, even though it gets complicated in higher dimensions. Theoretically, it's possible.</p>
         
             <h3>The Practical Reality</h3>
             <p>You might say - "But we live practically, duh! Forget the higher dimension; I'm trying to find an optimal route to the fridge without stepping on a Lego. Let's talk when functions are useful in real life – like predicting if that Tupperware in the back contains delicious leftovers, or just Sewing Supplies."</p>
@@ -82,81 +94,91 @@
             <p>Allow me to explain with another example to help clarify what I'm trying to explain.</p>
         
             <h3>The Happiness Function</h3>
-            <p><i>Happiness()</i> 🎢 depends on parameters like:</p>
+            <p>\[Happiness() = f(economic\_stability, health, relationships, purpose, ...)\]</p>
         
             <ul>
-                <li>Economic stability 💰</li>
-                <li>Health 🏋️‍♂️</li>
-                <li>Relationships ❤️</li>
-                <li>Purpose 🎯</li>
-                <li>Hobbies 🎨</li>
-                <li>Current environment 🌍</li>
-                <li>Society norms 🏛</li>
-                <li>Random life events 🎲 (like suddenly stepping on a Lego brick barefoot 🦶🔥)</li>
+                <li><i>Economic stability</i> 💰</li>
+                <li><i>Health</i> 🏋️‍♂️</li>
+                <li><i>Relationships</i> ❤️</li>
+                <li><i>Purpose</i> 🎯</li>
+                <li><i>Hobbies</i> 🎨</li>
+                <li><i>Current environment</i> 🌍</li>
+                <li><i>Society norms</i> 🏛</li>
+                <li><i>Random life events</i> 🎲 (like suddenly stepping on a Lego brick barefoot 🦶🔥)</li>
             </ul>
-        
-            <p>Some parameters aren't in our control (unexpected events, society norms, economic stability, current environment). Just like in baking, some ingredients are essential (chocolate chips! 🍫), while others are optional (you can survive without vanilla extract or cashew nuts). Similarly, in life, some factors have a huge impact on happiness, while others barely make a difference. But some are more important than others; if you slightly mess up the baking powder, it's fine.<b>But forget the chocolate chips?</b> Now that's a catastrophe! 🍪🚨</p>
-            <p>If we rank these parameters, say: Relationships > Health > Purpose > Hobbies and so on..., then to maximize happiness, we need to tweak the most influential parameters. This applies to all functions, whether it's health(physical_state, mental_wellbeing, lifestyle_factors), decision_making(options, potential risks, desired_outcome), confidence(situation, perceived_challenge, past_experiences) math works the same way for everybody. It all boils down to how well you are able to design and control your function.</p>
+            <p>Some variables are in your control—like hobbies. Others? Not so much like unexpected events, society norms, economic stability, current environment.. You can't control random misfortunes, just like you can't always control whether you have the right ingredients for cookies.</p>
+            <p>So what do we do? Simple. We ignore the uncontrollable parts just like how we ignore vallina extract or cashew nuts when we don't have them and optimize what we can control. If you sort these factors by impact—maybe relationships first, then health, then purpose—you can tweak the most important variable to maximize the happiness.</p>
+            <p> Some factors have a huge impact on happiness, while others barely make a difference. But some are more important than others; if you slightly mess up the baking powder, it's fine. But forget the chocolate chips? Now that's a catastrophe! 🍪🚨</p>
 
-
+            <p>This applies to all functions, whether it's:</p>
+            <p>\[Health(physical\_state, mental\_wellbeing, lifestyle\_factors....)\]</p>
+            <p>\[Decision\_Making(options, potential\_risks, desired\_outcome....)\]</p>
+            <p>\[Confidence(situation, perceived\_challenge, past\_experiences....)\]</p>
+            <p>Mathematics works the same way for everybody. It all boils down to how well you are able to design and control your function.</p>
             <p>Buckle up! 🚀
-                Everything so far was just the pre-build for what’s coming next.
+                Everything so far was just the pre-build for what's coming next.Now that we understand functions and their real-life applications, let's see where we can go from here</p>
 
-            Now that we understand functions and their real-life applications, let's see where we can go from here.</p>
-
-            <h3>Functions of Functions</h3>
-            <p>Some functions are functions of other functions 🤯. Let's call them super functions. For example, the Success Function might have parameters like happiness(), decisionMaking(), Health() etc. And we can keep nesting functions inside each other infinitely.</p>
+            <p>But before that, some functions are actually built upon other functions</i> 🤯. Let's call them <i>super functions</i>. For example, the <i>Success Function</i> might have parameters like <i>happiness()</i>, <i>decisionMaking()</i>, <i>Health()</i> etc. And we can keep nesting functions inside each other infinitely.</p>
 
             <p>That means there could be a super-super function that represents every possible function in an individual's life:</p>
 
-            <p>life_Function(success(decisionMaking(....), metrics, timeframe, unexpected_consequences), overall_happiness, relationships, health(....), purpose, resources, environment, adaptability, learning_and_growth ...) you get the point!</p>
-
-            <p>Hold onto this thought! We'll revisit it soon.</p>
+            <p>
+                \[
+                \text{life_Function} ()=
+                \begin{cases}
+                    \text{success()} & = f \big( \text{decisionMaking()}, \text{metrics}, \text{timeframe}) \\
+                    \text{happiness()} & = f \big( \text{relationships}, \text{health()}, \text{purpose} \big) \\
+                    \text{growth()} & = f \big( \text{adaptability}, \text{learning}, \text{resources} \big)\\
+                    \text{.....}
+                    \text{.....}
+                \end{cases}
+                \]
+                </p>
+                
+              <p>  You get the Point ! </p>
+                
 
             <h2>Bizzare Idea</h2>
             <p>Before going further, here's something that sounds bizarre, but there exists a way to approximately Learn all outputs for all functions across all input combinations, no matter the dimension.</p>
             
-            <p>With the help of Machine Learning, more precisely, Neural Networks. Going into technical details isn't the scope of this blog (there's plenty of good material online), but the idea is simple:</p>
+            <p>With the help of <i>Machine Learning</i>, more precisely, <i>Neural Networks</i>. Going into technical details isn't the scope of this blog (there's plenty of good material online), but the idea is simple:</p>
 
             <p>If you have enough input-output data, a model can learn the pattern. Even if you don't know the exact function! The neural network will approximate it. Then, you can input new values and predict the output.</p>
 
             <p>You might see where I'm going with this…</p>
-            <p>Learning the life_function()</p>
+            <p>Learning the <i>life_function()</i></p>
             
             <p><b>The only problem?</b> We don't have all the inputs and outputs for real life. Life is messy! Predictions are difficult, anything can happen. You were busy baking cookies 🍪 instead of attending a seemingly pointless networking event, only to later realize you missed a golden opportunity 💸 to pitch your startup to an investor. Oops, the butterfly effect is real!</p>
 
-            <h3>The Perfect Path Question</h3>
             <p>Let's forget all the chaos life has and see if we had all the data, could we predict the perfect path? Could we answer:</p>
             <ul>
-                <li>How do I make the best decisions that will lead to a better life? 🤔</li>
-                <li>How do I be successful? 🏆</li>
-                <li>How do I find my life's purpose? 🔍</li>
+                <li><b>How do I make the best decisions that will lead to a better life?</b> 🤔</li>
+                <li><b>How do I be successful?</b> 🏆</li>
+                <li><b>How do I find my life's purpose?</b> 🔍</li>
             </ul>
 
-            <p>But is it even possible to create such a machine?</p>
+            <p><b>But is it even possible to create such a machine?</b></p>
             <p>We may never fully create a life function machine, but we can see a small version of it in how our brain works.</p>
-            <p>Neural networks were inspired by the brain, after all to create artificial intelligence.</p>
+            <p><i>Neural networks</i> were inspired by the brain, after all to create artificial intelligence.</p>
 
-            <h2>Experience: </h2>
-            <p>A good example I could think of to explain this small version of life function is as follows:</p>
+            <p>A good example I could think of to explain this small version of <i>life function</i> is as follows:</p>
             <p>A Professor, having encountered thousands of students with diverse behaviors, learning styles, and abilities, has gained a deep understanding over the years. This allows them to offer personalized advice to new students as they've encountered every possible pattern before. They immediately recognize the student type by just having a couple of conversations, and the advice might completely change the entire trajectory of their life.</p>
 
             <p>Mathematically, this is exactly what we're looking for! Without even having a perfect function, we are able to move towards the optimized version of it.</p>
-            <p>In plain English, we call it Experience.</p>
+            <p>In plain English, I am just taking about <i>Experience</i>.</p>
 
             <h2></h2>
-            <p>But what is experience? How does it even arrive? Is large data the answer to everything? 🤯</p>
+            <p><b>But what is experience? How does it even arrive? Is large data the answer to everything?</b> 🤯</p>
 
-            <p>This brings up another mind-bending question: is everything just a huge pile of data, interacting with each other and creating more data? Sounds like Entropy.... but If that's true, then true creativity doesn't exist, it's just recycled information that our brain has processed in a new form.</p>
-            <p>But is that really true? Well, that's a blog post for another day! 😉</p>
+            <p>This brings up another mind-bending question: <b>is everything just a huge pile of data, interacting with each other and creating more data?</b> Sounds like <i>Entropy</i>.... but If that's true, then true creativity doesn't exist, it's just recycled information that our brain has processed in a new form.</p>
+            <p><b>But is that really true?</b> Well, that's a blog post for another day! 😉</p>
 
-            <p>While computers are fast at calculations, Artificial intelligence machines need huge data centers, massive electricity, and a ridiculous amount of computing power. Meanwhile, your brain runs on three chocolate chip cookies with warm milk and a good night's sleep. 🍪😴</p>
+            <p>While computers are fast at calculations, <i>Artificial intelligence</i> machines need huge data centers, massive electricity, and a ridiculous amount of computing power. Meanwhile, your brain runs on three chocolate chip cookies with warm milk and a good night's sleep. 🍪😴</p>
 
             <p>But let's not ignore one big factor—Computers, in their modern form, have only been around for a few decades, with early concepts dating back to the 19th century. Meanwhile, nature has been evolving the human brain for millions of years.</p>
             
-            <h3>The Ultimate Challenge</h3>
-            <p>So, here's the big question: Can evolution's creation be surpassed by its own creation?</p>
-            <p>Will Artificial Intelligence ever beat the naturally Intelligent brain in every aspect? Or will AI just keep overheating and begging for more data while we sit back and enjoy our chocolate chip cookies? 🍪😆</p>
+            <p>So, here's the big question: <b>Can evolution's creation be surpassed by its own creation?</b></p>
+            <p><b>Will Artificial Intelligence ever beat the naturally Intelligent brain in every aspect?</b> Or will AI just keep overheating and begging for more data while we sit back and enjoy our chocolate chip cookies? 🍪😆</p>
         </div>
         
         <!-- Like and Share Buttons -->
