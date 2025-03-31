@@ -448,6 +448,7 @@ body {
     overflow-y: hidden;
     text-align: left;
     padding: 0 10px;
+    padding-right: 2em;
     margin: 1em 0;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
@@ -459,6 +460,7 @@ body {
     overflow-x: auto;
     margin: 1em 0;
     padding: 0.5em 0;
+    padding-right: 2em;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-blue) var(--beige-light);
@@ -468,6 +470,7 @@ body {
 /* Override MathJax's default center alignment */
 .MathJax_Display > .MathJax {
     text-align: left !important;
+    padding-right: 2em;
 }
 
 .MathJax_Display > .MathJax > .MathJax_Display {
