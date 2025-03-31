@@ -440,6 +440,7 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     text-align: center;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .MathJax_Display {
@@ -447,6 +448,39 @@ body {
     overflow-y: hidden;
     text-align: center;
     padding: 0 10px;
+    margin: 1em 0;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Container for math expressions */
+.math-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-blue) var(--beige-light);
+}
+
+/* Custom scrollbar styling */
+.math-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.math-container::-webkit-scrollbar-track {
+    background: var(--beige-light);
+    border-radius: 4px;
+}
+
+.math-container::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+    border-radius: 4px;
+}
+
+.math-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-dark);
 }
 
 /* Ensure math expressions don't overflow on mobile */
@@ -463,6 +497,7 @@ body {
     .MathJax_Display .cases {
         display: block;
         text-align: left;
+        white-space: normal;
     }
     
     .MathJax_Display .cases > * {
