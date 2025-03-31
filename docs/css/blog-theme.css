@@ -432,4 +432,41 @@ body {
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 1.5rem;
+}
+
+/* MathJax Responsive Styling */
+.MathJax {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Ensure math expressions don't overflow on mobile */
+@media screen and (max-width: 768px) {
+    .MathJax_Display {
+        font-size: 0.9em;
+    }
+    
+    .blog-content .MathJax_Display {
+        margin: 1em 0;
+    }
+    
+    /* Adjust the cases environment for better mobile display */
+    .MathJax_Display .cases {
+        display: block;
+        text-align: left;
+    }
+    
+    .MathJax_Display .cases > * {
+        display: block;
+        margin: 0.5em 0;
+    }
 } 
