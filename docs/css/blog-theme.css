@@ -439,14 +439,14 @@ body {
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    text-align: center;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    text-align: left;
+    -webkit-overflow-scrolling: touch;
 }
 
 .MathJax_Display {
     overflow-x: auto;
     overflow-y: hidden;
-    text-align: center;
+    text-align: left;
     padding: 0 10px;
     margin: 1em 0;
     white-space: nowrap;
@@ -462,6 +462,16 @@ body {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-blue) var(--beige-light);
+    text-align: left;
+}
+
+/* Override MathJax's default center alignment */
+.MathJax_Display > .MathJax {
+    text-align: left !important;
+}
+
+.MathJax_Display > .MathJax > .MathJax_Display {
+    text-align: left !important;
 }
 
 /* Custom scrollbar styling */
@@ -487,6 +497,7 @@ body {
 @media screen and (max-width: 768px) {
     .MathJax_Display {
         font-size: 0.9em;
+        text-align: left !important;
     }
     
     .blog-content .MathJax_Display {
