@@ -501,46 +501,6 @@ footer {
         padding: 1rem;
     }
     
-    /* Blog specific mobile styles */
-    .blog-container {
-        margin: 80px auto 30px;
-        padding: 1rem;
-    }
-    
-    .blog-title {
-        font-size: 1.8rem !important;
-    }
-    
-    .blog-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .blog-interactions {
-        justify-content: space-between;
-    }
-    
-    .interaction-btn {
-        flex: 1;
-        justify-content: center;
-    }
-    
-    .back-btn {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .blog-navigation {
-        justify-content: center;
-    }
-    
-    .next-blog-link {
-        width: 100%;
-        justify-content: center;
-    }
-    
     /* Main blog page responsiveness */
     .blog-grid {
         grid-template-columns: 1fr;
